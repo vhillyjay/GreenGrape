@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BlogList from "./BlogList";
 
 const Home = () => {
     // let name = 'nayeon';
@@ -22,12 +23,8 @@ const Home = () => {
 
     return ( 
         <div className="home">
-            {blogs.map((blog) => (
-                <div className="blog-preview" key={blog.id}>
-                    <h2>{blog.title}</h2>
-                    <p>written by {blog.author}</p>
-                </div>
-            ))}
+            <BlogList blogs={blogs} title="All Blogs" />
+            {/* first blogs(can be any name you want), second blogs is the value we are passing */}
             {/* blogs from usestate variable, .map is a js function. call back function.
                 blog(each item) is defined by the user can be any name. key should be unique  */}
 
