@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
   // react logo
-import './App.css';
+// import './App.css';
 import Navbar from './Navbar';
   // imported from Navbar.js
 import Home from './Home';
