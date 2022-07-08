@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+  // from app.js file
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+  // render to div class root
 root.render(
   <React.StrictMode>
     <App />
+      {/* from import App from './App' // function App */}
   </React.StrictMode>
 );
 

@@ -69,5 +69,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+to create react app
+npx create-react-app appName
+node_modules cant be uploaded on github
+npm install on terminal to get the node_modules/dependencies
+
 current netlify link
 https://hilarious-clafoutis-6222c5.netlify.app/
