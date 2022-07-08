@@ -21,11 +21,17 @@ const Home = () => {
         { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
     ]);
 
+    const handleDelete = (id) => {
+        const newBlogs = blogs.filter(blog => blog.id !== id);
+        // blogs is from usestate / blogs.filter(blog => blog.id !== id) 'blog' should be the same/ any name is okay
+        setBlogs(newBlogs);
+    };
+
     return ( 
         <div className="home">
-            <BlogList blogs={blogs} title="All Blogs" />
+            <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>
             {/* first blogs(can be any name you want), second blogs is the value we are passing *const[blogs]* */}
-            <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Marios Blogs"/>
+            {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Marios Blogs"/> */}
 
             {/* <h2>Home Page</h2>
                 <p>{name}</p>
