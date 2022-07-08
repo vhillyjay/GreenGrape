@@ -1,10 +1,22 @@
 import logo from './logo.svg';
+  // react logo
 import './App.css';
 
 function App() {
+  const title = "Welcome to the new Blog";
+  const likes = 55;
+  const link = "http://www.google.com";
+    // string number array allowed
+    // objects not allowed
+
   return (
     <div className="App">
-      <header className="App-header">
+      <div className='content'>
+        <h1> {title} </h1>
+        <p>Liked  {likes} times</p>
+        <a href={link}>Google</a>
+      </div>
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,9 +29,10 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }
 
 export default App;
+  // always export component function
