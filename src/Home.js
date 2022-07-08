@@ -24,9 +24,8 @@ const Home = () => {
     return ( 
         <div className="home">
             <BlogList blogs={blogs} title="All Blogs" />
-            {/* first blogs(can be any name you want), second blogs is the value we are passing */}
-            {/* blogs from usestate variable, .map is a js function. call back function.
-                blog(each item) is defined by the user can be any name. key should be unique  */}
+            {/* first blogs(can be any name you want), second blogs is the value we are passing *const[blogs]* */}
+            <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Marios Blogs"/>
 
             {/* <h2>Home Page</h2>
                 <p>{name}</p>
