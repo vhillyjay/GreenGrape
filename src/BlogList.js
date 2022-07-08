@@ -11,6 +11,8 @@ const BlogList = ({blogs, title}) => {
                     <p>written by {blog.author}</p>
                 </div>
             ))}
+            {/* blogs from usestate variable, .map is a js function. call back function.
+                blog(each item) is defined by the user can be any name. key should be unique  */}
         </div>
      );
 }
