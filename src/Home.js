@@ -2,15 +2,6 @@ import { useState } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
-    // let name = 'nayeon';
-    // const [name, setName] = useState('nayeon');
-        // assigning usestate to const while array destructuring, usestate is reactive
-        // first param is the value of usestate, use the second to update the value aka set***
-
-    // const handleClick = () => {
-    //     setName('momo');
-    // }
-
     // const handleClickAgain = (name) => {
     //     console.log('hello' + ' ' + name);
     // }
@@ -22,7 +13,7 @@ const Home = () => {
     ]);
 
     const handleDelete = (id) => {
-        const newBlogs = blogs.filter(blog => blog.id !== id);
+        const newBlogs = blogs.filter((blogsContent) => blogsContent.id !== id);
         // blogs is from usestate / blogs.filter(blog => blog.id !== id) 'blog' should be the same/ any name is okay
         setBlogs(newBlogs);
     };
@@ -33,15 +24,10 @@ const Home = () => {
             {/* first blogs(can be any name you want), second blogs is the value we are passing *const[blogs]* */}
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Marios Blogs"/> */}
 
-            {/* <h2>Home Page</h2>
-                <p>{name}</p>
-            <button onClick={handleClick}>Click here</button> */}
             {/* <button onClick={() => {
                 handleClickAgain('nayeonnn');
             }}>Click again</button> */}
                 {/* anonymous function. fires when button is clicked */}
-            {/* <button onClick={() => handleClickAgain('nayeon')}>Click again</button> */}
-                {/* anonymous function. fires when button is clicked. same as the code above */}
         </div>
      );
 }

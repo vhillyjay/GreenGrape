@@ -5,11 +5,11 @@ const BlogList = ({blogs, title, handleDelete}) => {
     return ( 
         <div className="blog-list">
             <h2> {title} </h2>
-            {blogs.map((blog) => (
-                <div className="blog-preview" key={blog.id}>
-                    <h2>{blog.title}</h2>
-                    <p>written by {blog.author}</p>
-                    <button onClick={() => handleDelete(blog.id)}>Delete Blog</button>
+            {blogs.map((blogsContent) => (
+                <div className="blog-preview" key={blogsContent.id}>
+                    <h2>{blogsContent.title}</h2>
+                    <p>written by {blogsContent.author}</p>
+                    <button onClick={() => handleDelete(blogsContent.id)}>Delete Blog</button>
                 </div>
             ))}
             {/* blog.something in div is the blog inside .map() */}
