@@ -73,6 +73,9 @@ to create react app
 npx create-react-app appName
 node_modules cant be uploaded on github
 npm install/update on terminal to get the node_modules/dependencies
+npx json-server --watch data/db.json --port 8000
+    http://localhost:8000/blogs
+    
 
 current netlify link
 https://hilarious-clafoutis-6222c5.netlify.app/
