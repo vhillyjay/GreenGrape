@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
+import useFetch from "./useFetch";
 
 const Home = () => {
     // const handleClickAgain = (name) => {
@@ -17,32 +18,7 @@ const Home = () => {
     //     setBlogs(newBlogs);
     // };
 
-    const [blogs, setBlogs] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        fetch('http://localhost:8000/blogs') //json file made locally with path (data/db.json)
-            .then((response) => {
-                if(!response.ok) {
-                    throw Error('Could not fetch data');
-                }
-                return response.json();
-            })
-            .then((dataContent) => { //dataContent is the then response from fetch('http://localhost:8000/blogs')
-                // console.log(dataContent); //json file logged to console
-                setBlogs(dataContent);
-                setIsLoading(false);
-                setError(null);
-            })
-            .catch((err) => {
-                console.log(err.message);
-                setIsLoading(false);
-                setError(err.message);
-                
-            })
-        console.log('useEffect running');
-    }, []);
+    const { data: blogs, isLoading, error } = useFetch('http://localhost:8000/blogs');
 
     return ( 
         <div className="home">
