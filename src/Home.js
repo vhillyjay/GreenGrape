@@ -12,12 +12,13 @@ const Home = () => {
     //     { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
     // ]);
 
-    const [blogs, setBlogs] = useState(null);
-
     // const handleDelete = (id) => {
     //     const newBlogs = blogs.filter((blogsContent) => blogsContent.id !== id);
     //     setBlogs(newBlogs);
     // };
+
+    const [blogs, setBlogs] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         fetch('http://localhost:8000/blogs')
@@ -27,12 +28,14 @@ const Home = () => {
             .then((dataContent) => { //dataContent is the then response from fetch('http://localhost:8000/blogs')
                 console.log(dataContent);
                 setBlogs(dataContent);
+                setIsLoading(false);
             })
         console.log('useEffect running');
     }, []);
 
     return ( 
         <div className="home">
+            {isLoading && <div>Loading</div>}
             {blogs && <BlogList blogs={blogs} title="All Blogs"/>}
             {/* prop temporarily removed == handleDelete={handleDelete} */}
             {/* first blogs(can be any name you want), second blogs is the value we are passing *const[blogs]* */}
