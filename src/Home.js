@@ -23,7 +23,7 @@ const Home = () => {
 
     return ( 
         <div className="home">
-            <BlogList blogs={blogs} title=" All Blogs" handleDelete={handleDelete}/>
+            <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>
             {/* first blogs(can be any name you want), second blogs is the value we are passing *const[blogs]* */}
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Marios Blogs"/> */}
 
