@@ -72,7 +72,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 to create react app
 npx create-react-app appName
 node_modules cant be uploaded on github
-npm install on terminal to get the node_modules/dependencies
+npm install/update on terminal to get the node_modules/dependencies
 
 current netlify link
 https://hilarious-clafoutis-6222c5.netlify.app/
+currently down due to netlify bandwidth consumption
