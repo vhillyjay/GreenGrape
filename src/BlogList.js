@@ -1,7 +1,5 @@
 const BlogList = ({blogs, title, handleDelete}) => {
     // blogs, title from child component<bloglist /> from home.js
-    // const blogs = props.blogs;
-    // console.log(props, blogs);
     return ( 
         <div className="blog-list">
             <h2> {title} </h2>
