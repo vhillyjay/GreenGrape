@@ -19,22 +19,34 @@ const Home = () => {
 
     const [blogs, setBlogs] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:8000/blogs')
+        fetch('http://localhost:8000/blogs') //json file made locally with path (data/db.json)
             .then((response) => {
+                if(!response.ok) {
+                    throw Error('Could not fetch data');
+                }
                 return response.json();
             })
             .then((dataContent) => { //dataContent is the then response from fetch('http://localhost:8000/blogs')
-                console.log(dataContent);
+                // console.log(dataContent); //json file logged to console
                 setBlogs(dataContent);
                 setIsLoading(false);
+                setError(null);
+            })
+            .catch((err) => {
+                console.log(err.message);
+                setIsLoading(false);
+                setError(err.message);
+                
             })
         console.log('useEffect running');
     }, []);
 
     return ( 
         <div className="home">
+            {error && <div>{error}</div> }
             {isLoading && <div>Loading</div>}
             {blogs && <BlogList blogs={blogs} title="All Blogs"/>}
             {/* prop temporarily removed == handleDelete={handleDelete} */}
