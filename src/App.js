@@ -2,18 +2,26 @@
 import Navbar from './Navbar';
 import Home from './Home';
   // imported from components
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
     // string number array allowed
     // objects not allowed
 
   return (
-    <div className="App">
-      <Navbar />
-      <div className='content'>
-        <Home />
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className='content'>
+          {/* <Home /> */}
+          <Switch>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
