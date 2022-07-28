@@ -75,6 +75,7 @@ node_modules cant be uploaded on github
 npm install/update on terminal to get the node_modules/dependencies
 npx json-server --watch data/db.json --port 8000
     http://localhost:8000/blogs
+npm install react-router-dom@5
     
 
 current netlify link

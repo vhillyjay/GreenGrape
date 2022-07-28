@@ -26,7 +26,7 @@ const useFetch = (url) => {
                 setError(err.message);
                 
             })
-        console.log('useEffect running');
+        // console.log('useEffect running');
     }, [url]); //will only run in the first render because of second param which is []
 
 return { data, isLoading, error };
