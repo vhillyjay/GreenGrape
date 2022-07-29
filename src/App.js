@@ -4,6 +4,7 @@ import Home from './Home';
   // imported from components
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './Create';
+import BlogDetails from './BlogDetails';
 
 function App() {
     // string number array allowed
@@ -22,6 +23,10 @@ function App() {
             <Route path="/create">
               <Create />
               <div>lie to me</div>
+            </Route>
+            <Route path="/blogs/:id">
+              <BlogDetails />
+              <div>ddnothing but a heartbreak</div>
             </Route>
           </Switch>
         </div>
