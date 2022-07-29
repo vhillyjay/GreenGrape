@@ -22,9 +22,9 @@ const Home = () => {
 
     return ( 
         <div className="home">
-            {error && <div>{error}</div> }
-            {isLoading && <div>Loading</div>}
-            {blogs && <BlogList blogs={blogs} title="All Blogs"/>}
+            { error && <div>{ error }</div> }
+            { isLoading && <div>Loading</div> }
+            { blogs && <BlogList blogs={ blogs } title="All Blogs"/> }
             {/* prop temporarily removed == handleDelete={handleDelete} */}
             {/* first blogs(can be any name you want), second blogs is the value we are passing *const[blogs]* */}
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Marios Blogs"/> */}

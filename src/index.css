@@ -55,6 +55,26 @@
   text-decoration: none;
 }
 /* style for Link to */
+
+/* style for blogdetails */
+.blog-details h2 {
+  font-size: 20px;
+  color: #70E31F;
+  margin-bottom: 10px;
+}
+.blog-details div {
+  margin: 20px 0;
+}
+.blog-details button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* style for blogdetails */
+
 .head-title{
   margin-left: 5px;
 }
