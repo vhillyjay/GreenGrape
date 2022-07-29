@@ -56,7 +56,7 @@
 }
 /* style for Link to */
 
-/* style for blogdetails */
+/* style for blogDetails */
 .blog-details h2 {
   font-size: 20px;
   color: #70E31F;
@@ -66,14 +66,14 @@
   margin: 20px 0;
 }
 .blog-details button {
-  background: #f1356d;
+  background: #70E31F;
   color: #fff;
   border: 0;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
 }
-/* style for blogdetails */
+/* style for blogDetails */
 
 /* create new blog form */
 .create {
