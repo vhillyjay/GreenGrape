@@ -4,16 +4,24 @@ const Create = () => {
     const [ title, setTitle ] = useState('');
     const [ body, setBody ] = useState('');
     const [ author, setAuthor ] = useState('');
+    const handleSubmit = (e) => {
+        e.preventDefault(); //prevents form from refreshing
+        const blogInput = { title, body, author}; //collects the current state value
+        console.log(blogInput);
+    }
+    
     return ( 
         <div className="create">
             <h2>Add new blog</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>Blog title:</label>
                 <input 
                     type="text" 
                     required 
                     value={title}
+                        //default value is empty as per useState
                     onChange={(e) => setTitle(e.target.value)}
+                        //value will change / targets the input and current value(which is empty)
                 />
                 <label>Blog body:</label>
                 <textarea
