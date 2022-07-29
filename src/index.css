@@ -51,6 +51,13 @@
   color: #70E31F;
   margin-bottom: 8px;
 }
+.blog-preview a{ 
+  text-decoration: none;
+}
+/* style for Link to */
+.head-title{
+  margin-left: 5px;
+}
 
 /* body {
   margin: 0;
