@@ -22,11 +22,11 @@ function App() {
             </Route>
             <Route path="/create">
               <Create />
-              <div>lie to me</div>
+              {/* <div>lie to me</div> */}
             </Route>
             <Route path="/blogs/:id">
               <BlogDetails />
-              <div>ddnothing but a heartbreak</div>
+              {/* <div>ddnothing but a heartbreak</div> */}
             </Route>
           </Switch>
         </div>
