@@ -19,7 +19,8 @@ const Home = () => {
     // };
 
     const { data: blogs, isLoading, error } = useFetch('http://localhost:8000/blogs');
-
+    //check data/db.json / 'blogs' is the resource name being used /also used as the api endpoint
+    //in this case whatever the first name of the resource is, it will be the api endpoint generated 
     return ( 
         <div className="home">
             { error && <div>{ error }</div> }

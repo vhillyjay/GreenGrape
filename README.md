@@ -75,6 +75,10 @@ node_modules cant be uploaded on github
 npm install/update on terminal to get the node_modules/dependencies
 npx json-server --watch data/db.json --port 8000
     http://localhost:8000/blogs
+        //check data/db.json /blogs is the resource name being used /also used as the api endpoint
+        //in this case whatever the first name of the resource is, it will be the api endpoint generated
+        //resource blogs = http://localhost:8000/blogs
+        //resource dummyData = http://localhost:8000/dummyData
 npm install react-router-dom@5
     
 
