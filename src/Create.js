@@ -4,10 +4,20 @@ const Create = () => {
     const [ title, setTitle ] = useState('');
     const [ body, setBody ] = useState('');
     const [ author, setAuthor ] = useState('');
+    const [ uploading, setUploading ] = useState(false);
     const handleSubmit = (e) => {
         e.preventDefault(); //prevents form from refreshing
         const blogInput = { title, body, author}; //collects the current state value
-        console.log(blogInput);
+        // console.log(blogInput);
+        setUploading(true); //after form is submitted
+        fetch('http://localhost:8000/blogs', { //same endpoint on home.js
+            method: 'POST', //to post on api endpoint indicated in fetch
+            headers: { "Content-Type": "application/json" }, //to indentify content type being sent
+            body: JSON.stringify(blogInput) //actual data being sent/automatic id
+        }).then(() => {
+            console.log('new blog added')
+            setUploading(false); //form is already submitted/added
+        });
     }
     
     return ( 
@@ -43,7 +53,9 @@ const Create = () => {
                     <option value="mario">mario</option>
                     <option value="yoshi">yoshi</option>
                 </select> */}
-                <button>Add Blog</button>
+                
+                { !uploading && <button>Add Blog</button> }
+                { uploading && <button disabled>Add Blog</button> }
             </form>
             {/* <p>{title} - {body} - {author}</p> */}
         </div>

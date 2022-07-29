@@ -9,7 +9,7 @@ const useFetch = (url) => {
     useEffect(() => {
         const abortControl = new AbortController(); //to abort fetch when switched to a different component
 
-        fetch(url, {signal:abortControl.signal}) //json file made locally with path (data/db.json) //'http://localhost:8000/blogs'
+        fetch(url, {signal: abortControl.signal}) //json file made locally with path (data/db.json) //'http://localhost:8000/blogs'
             .then((response) => {
                 if(!response.ok) {
                     throw Error('Could not fetch data'); //throw this error message to .catch
@@ -25,6 +25,7 @@ const useFetch = (url) => {
             .catch((err) => {
                 // console.log(err.message);
                 if (err.name === "AbortError") {
+                    // console.log(err.name);
                     console.log('Fetch aborted.')
                 } else {
                     setIsLoading(false);
