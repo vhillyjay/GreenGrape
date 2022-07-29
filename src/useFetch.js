@@ -7,7 +7,9 @@ const useFetch = (url) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(url) //json file made locally with path (data/db.json) //'http://localhost:8000/blogs'
+        const abortControl = new AbortController(); //to abort fetch when switched to a different component
+
+        fetch(url, {signal:abortControl.signal}) //json file made locally with path (data/db.json) //'http://localhost:8000/blogs'
             .then((response) => {
                 if(!response.ok) {
                     throw Error('Could not fetch data'); //throw this error message to .catch
@@ -21,12 +23,16 @@ const useFetch = (url) => {
                 setError(null);
             })
             .catch((err) => {
-                console.log(err.message);
-                setIsLoading(false);
-                setError(err.message);
-                
+                // console.log(err.message);
+                if (err.name === "AbortError") {
+                    console.log('Fetch aborted.')
+                } else {
+                    setIsLoading(false);
+                    setError(err.message);
+                }     
             })
         // console.log('useEffect running');
+        return () => abortControl.abort();
     }, [url]); //will only run in the first render because of second param which is []
 
 return { data, isLoading, error };
