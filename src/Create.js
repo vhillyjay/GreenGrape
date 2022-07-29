@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
     const [ title, setTitle ] = useState('');
     const [ body, setBody ] = useState('');
     const [ author, setAuthor ] = useState('');
     const [ uploading, setUploading ] = useState(false);
+    const history = useHistory();
     const handleSubmit = (e) => {
         e.preventDefault(); //prevents form from refreshing
         const blogInput = { title, body, author}; //collects the current state value
@@ -17,6 +19,8 @@ const Create = () => {
         }).then(() => {
             console.log('new blog added')
             setUploading(false); //form is already submitted/added
+            // history.go(-1); //will go one step back in the history
+            history.push('/'); //will redirect to path ('/') /parameter
         });
     }
     
