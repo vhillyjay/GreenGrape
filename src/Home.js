@@ -18,7 +18,8 @@ const Home = () => {
     //     setBlogs(newBlogs);
     // };
 
-    const { data: blogs, isLoading, error } = useFetch('http://localhost:8000/blogs');
+    const { data: blogs, isLoading, error } = useFetch('https://fakeserverreact.herokuapp.com/blogs');
+    // http://localhost:8000/blogs
     //check data/db.json / 'blogs' is the resource name being used /also used as the api endpoint
     //in this case whatever the first name of the resource is, it will be the api endpoint generated 
     return ( 

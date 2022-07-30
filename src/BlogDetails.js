@@ -4,11 +4,13 @@ import { useHistory } from "react-router-dom";
 
 const BlogDetails = () => {
     const { id } = useParams();
-    const { data: blogs, isLoading, error } = useFetch('http://localhost:8000/blogs/' + id);
+    const { data: blogs, isLoading, error } = useFetch('https://fakeserverreact.herokuapp.com/blogs/' + id);
         //imported useFetch with parameter of resource
+        // http://localhost:8000/blogs/
     const history = useHistory();
     const handleDeleteBlog = () => {
-        fetch('http://localhost:8000/blogs/' + blogs.id, {
+        fetch('https://fakeserverreact.herokuapp.com/blogs/' + blogs.id, {
+        // http://localhost:8000/blogs/
             method: 'DELETE'
         }).then(() => {
             history.push('/');

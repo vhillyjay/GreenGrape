@@ -12,7 +12,7 @@ const Create = () => {
         const blogInput = { title, body, author}; //collects the current state value
         // console.log(blogInput);
         setUploading(true); //after form is submitted
-        fetch('http://localhost:8000/blogs', { //same endpoint on home.js
+        fetch('https://fakeserverreact.herokuapp.com/blogs', { //same endpoint on home.js //http://localhost:8000/blogs
             method: 'POST', //to post on api endpoint indicated in fetch
             headers: { "Content-Type": "application/json" }, //to indentify content type being sent
             body: JSON.stringify(blogInput) //actual data being sent/automatic id
