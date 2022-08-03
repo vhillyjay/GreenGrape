@@ -83,5 +83,4 @@ npm install react-router-dom@5
     
 
 current netlify link
-https://hilarious-clafoutis-6222c5.netlify.app/
-currently down due to netlify bandwidth consumption
+> https://sprightly-ganache-9699a0.netlify.app/
